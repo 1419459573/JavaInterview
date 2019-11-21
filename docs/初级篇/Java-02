@@ -1,0 +1,69 @@
+11. 构造方法有哪些特性 
+答案： 
+名字与类名相同；
+没有返回值，但不能用 void 声明构造函数；
+生成类的对象时自动执行，无需调用。
+
+12. 构造器（constructor）是否可被重写（override）？ 
+答案： 
+Constructor 不能被继承，所以 Constructor 也就不能被 override。每一个类必须有自己的构造 函数，负责构造自己这部分的构造。子类不会覆盖父类的构造函数。
+
+13. ==与 equals 的区别 
+答案： 
+== : 它的作用是判断两个对象的地址是不是相等。即，判断两个对象是不是同一个对象。equals 方法是由Object 类提供的，默认的实现只有当对象和自身进行比较时才会返回 true， 这个时候和 “==”是等价的。可以由子类来进行重写。 
+举例： 
+String str1 = new String("abcd"); 
+String str2 = new String ("abcd"); 
+System.out.println(str1==str2);//false 
+System.out.println(str1.equals(str2));//true 
+但是，如果按照下列方式，结果如下： 
+String str1 = "abcd"; String str2 = "abcd"; 
+System.out.println(str1==str2);//true 
+这个时候，利用了 Java 常量池的机制，str1 和 str2 同时指向的是常量池中的同一块地址区 域。
+
+14. 重写 equals 时要同时重写 hashcode 吗? 
+答案： 
+按照 Java 规范，两个对象是 equal 的，那么这两个对象的 hashCode 值也要相等的。 
+集合框架中，先根据 hashCode 来判断对象是否不相等，只要是不相等，就认为他们肯定不 是同一个对象，不再调用 equals 判断。 
+因此，要确保 equal 的对象拥有相同的 hashcode 是非常有必要的（反则未必）。
+
+15. 是否可以继承 String 类？ 
+答案： 
+不可以，因为 String 类是 final。
+
+16. String s=new String("xyz");创建了几个字符串对象？ 
+答案： 
+两个对象，一个是"xyz",一个是指向"xyz"的引用对象 s。在 jvm 的工作过程中，会创建一片的 内存空间专门存入 string 对象。我们把这片内存空间叫做 string 池。String s="Hello";当 jvm 看到"Hello"，在 string池创建 string 对象存储它，并将他的引用返回给 s。
+
+17. 下面代码输出的结果是什么？ 
+String s1="a"; 
+String s2=s1+"b"; 
+String s3="a"+"b";
+System.out.println(s2=="ab"); 
+System.out.println(s3=="ab"); 
+答案：第一条语句打印的结果为 false，第二条语句打印的结果为 true。 
+Java 对字符串常量直接相加的表达式进行优化，s3 相当于直接定义了一个”ab”的字符串
+
+18. 当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变 化后的结果，那么这里到底是值传递还是引用传递？ 
+答案： 
+是值传递。Java 编程语言只有值传递参数,传参的本质是赋值。指向同一个对象,对象的内容 可以在被调用的方法中改变，但对象的引用是永远不会改变的。 
+值传递举例： 
+
+public static void main(String[] args) { 
+       String word = "Hello"; 
+       change(word); 
+       System.out.println("main() word is " + word); 
+}
+public static void change(String word) { 
+       word = "hello world"; 
+       System.out.println("change() word is " + word); 
+}
+
+输出结果为: 
+change() word is hello world 
+main() word is hello 
+
+
+19. String 和 StringBuilder、StringBuffer 的区别？ 
+答案： 
+String 的是不可变的；StringBuffer 的长度是可变的，如果你对字符串中的内容经常进行操作， 特别是内容要修改时，那么使用 StringBuffer，线程安全；StringBuilder 与 StringBuffe 等价， 线程不安全，
