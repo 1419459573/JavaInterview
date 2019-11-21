@@ -1,5 +1,4 @@
 1.访问修饰符 public,private,protected,以及默认时的区别？ 
-
 答案：
     修饰符     当前类  同包  子类  其他包 
     public      √      √    √      √ 
@@ -14,12 +13,10 @@
 除了基本类型（primitive type），剩下的都是引用类型（reference type）。
 
 3. float f=3.14;是否正确？ 
-
 答案：
 不正确。精度不准确，应该强制类型转换：float f=（float）3.14 或 float f =3.14F. 
 
 4. 说明 int 和 Integer 的区别 
-
 答案：
         Java 提供两种不同的类型：引用类型和原始类型（或内置类型）;int 是 java 的原始数据类型，Integer 是 java 为 int 提供的封装类。 
         Java 为每个原始类型提供了封装类： 
@@ -35,16 +32,12 @@
                System.out.println(a == b);      // false 两个引用没有引用同一对象 
                System.out.println(a == c);      // true a 自动拆箱成 int 类型再和 c 比较 
 
-
-
 5. &和&&的区别？ 
-
 答案：
        &是位运算符，表示按位与运算，&&是逻辑运算符，表示逻辑与（and）。 
        如，0x31 & 0x0f 的结果为 0x01。而对于&&，当且仅当两个操作数都为真，条件才为 真。
        
 6. 在 Java 中如何跳出当前的多重嵌套循环？ 
-
 答案：
 在 Java 中，要想跳出多重循环，可以在外面的循环语句前定义一个标号，然后在里层循环体的代码中使用带有标号的 break 语句，即可跳出外层循环。 
 point1: 
@@ -56,7 +49,6 @@ for(int i=0;i<10;i++) {
 但是并不建议这么用。可以直接使用 break 之后用条件判断再跳出更上层的循环。 
 
 7. 解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。 
-
 答案： 
 堆区: 
 （1）存储的全部是对象，每个对象都包含一个与之对应的 class 的信息。 
@@ -73,7 +65,6 @@ for(int i=0;i<10;i++) {
 
 
 8. Math.round(11.5)等于多少？Math.round(-11.5)等于多少？Math.round(-11.5001)呢？ 
-
 答案： 
 12，-11, -12 
 Math 类中提供了三个与取整有关的方法：ceil、floor、round。
@@ -83,7 +74,6 @@ floor 表示向下取整，所以，Math.floor(11.5)的结果为11,
 Math.floor(-11.5)的结果是-12；round 方法，它表示“四舍五入”。 
 
 9. switch 是否能作用在 byte 上，是否能作用在 long 上，是否能作用在 String 上？ 
-
 答案：
 switch 可作用于 char byte short int String 
 switch 可作用于 char byte short int 对应的包装类 
@@ -91,7 +81,6 @@ switch 不可作用于 long double float boolean，包括他们的包装类
 switch 中可以是枚举类型
 
 10. 用最有效率的方法计算 2 乘以 8？ 
-
 答案： 
 2<<
 
