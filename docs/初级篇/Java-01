@@ -2,59 +2,37 @@
 
 答案：
     修饰符     当前类  同包  子类  其他包 
-
     public      √      √    √      √ 
-
     Protected   √      √    √      × 
-
     default     √      √    ×      × 
-
     private     √      ×    ×      × 
-
     不写时默认 default 
 
-
 2. String 是最基本的数据类型吗？ 
-
 答案：
-不是。Java 中的基本数据类型有 8 个：byte、short、int、long、float、double、char、boolean；除了基本类型（primitive type），剩下的都是引用类型（reference type）。
-
- 
+不是。Java 中的基本数据类型有 8 个：byte、short、int、long、float、double、char、boolean；
+除了基本类型（primitive type），剩下的都是引用类型（reference type）。
 
 3. float f=3.14;是否正确？ 
 
 答案：
 不正确。精度不准确，应该强制类型转换：float f=（float）3.14 或 float f =3.14F. 
 
-
-
 4. 说明 int 和 Integer 的区别 
 
 答案：
         Java 提供两种不同的类型：引用类型和原始类型（或内置类型）;int 是 java 的原始数据类型，Integer 是 java 为 int 提供的封装类。 
-
         Java 为每个原始类型提供了封装类： 
-
         原始类型:boolean,char,byte,short,int,long,float,double 
-
         封装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double
-
         引用类型和原始类型具有不同的特征和用法，如：大小和速度问题，这种类型以哪种类 
-
-型的数据结构存储，当引用类型和原始类型用作某个类的实例数据时所指定的缺省值。对象 
-
-引用实例变量的缺省值为 null，而原始类型实例变量的缺省值与它们的类型有关。 
-
-       Java 会在 int 和 Integer 之间自动装箱和拆箱，示例如下： 
-
+        型的数据结构存储，当引用类型和原始类型用作某个类的实例数据时所指定的缺省值。对象 
+        引用实例变量的缺省值为 null，而原始类型实例变量的缺省值与它们的类型有关。 
+        Java 会在 int 和 Integer 之间自动装箱和拆箱，示例如下： 
                Integer a = new Integer(3); 
-
-               Integer b = 3;                            // 将 3 自动装箱成 Integer 类型 
-
+               Integer b = 3;                   // 将 3 自动装箱成 Integer 类型 
                int c = 3; 
-
                System.out.println(a == b);      // false 两个引用没有引用同一对象 
-
                System.out.println(a == c);      // true a 自动拆箱成 int 类型再和 c 比较 
 
 
@@ -62,19 +40,13 @@
 5. &和&&的区别？ 
 
 答案：
-
        &是位运算符，表示按位与运算，&&是逻辑运算符，表示逻辑与（and）。 
-
        如，0x31 & 0x0f 的结果为 0x01。而对于&&，当且仅当两个操作数都为真，条件才为 真。
-
-
-
+       
 6. 在 Java 中如何跳出当前的多重嵌套循环？ 
 
 答案：
-
 在 Java 中，要想跳出多重循环，可以在外面的循环语句前定义一个标号，然后在里层循环体的代码中使用带有标号的 break 语句，即可跳出外层循环。 
-
 point1: 
 for(int i=0;i<10;i++) { 
     for(int j=0;j<10;j++) { 
@@ -83,62 +55,43 @@ for(int i=0;i<10;i++) {
 }
 但是并不建议这么用。可以直接使用 break 之后用条件判断再跳出更上层的循环。 
 
-
 7. 解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。 
 
 答案： 
-
 堆区: 
-
 （1）存储的全部是对象，每个对象都包含一个与之对应的 class 的信息。 
-
 （2）存放的这些对象是程序运行时动态创建的。 
-
 （3）jvm 只有一个堆区(heap)被所有线程共享，堆中不存放基本类型和对象引用，只存放对 象本身。 
-
 栈区: 
-
 （1）每个线程包含一个栈区，栈中只保存基础数据类型的对象和动态创建的对象的引用(对 象本身都存放在堆区中)。 
-
 （2）每个栈中的数据(原始类型和对象引用)都是私有的，其他栈不能访问。 
-
 （3）由编译器自动分配释放，存放函数的参数值，局部变量的值等．
-
 静态区/方法区: 
-
 （1）方法区又叫静态区，跟堆一样，被所有的线程共享。方法区包含所有的 class 和 static 变量。 
-
-（2）方法区中包含的都是在整个程序中永远唯一的元素，如 class，static 变量。举例：String str=new String("hello");变量 str 放在栈上，用 new 创建出来的字符串对象放在堆 上，而"hello"这个字面量是放在方法区的。
-
+（2）方法区中包含的都是在整个程序中永远唯一的元素，如 class，static 变量。举例：String str=new String("hello");
+     变量 str 放在栈上，用 new 创建出来的字符串对象放在堆 上，而"hello"这个字面量是放在方法区的。
 
 
 8. Math.round(11.5)等于多少？Math.round(-11.5)等于多少？Math.round(-11.5001)呢？ 
 
 答案： 
-
 12，-11, -12 
-
-Math 类中提供了三个与取整有关的方法：ceil、floor、round。ceil 表示向上取整，Math.ceil(11.5) 的结果为 12,Math.ceil(-11.5)的结果是-11；floor 表示向下取整，所以，Math.floor(11.5)的结 果为 11,Math.floor(-11.5)的结果是-12；round 方法，它表示“四舍五入”。 
-
-
+Math 类中提供了三个与取整有关的方法：ceil、floor、round。
+ceil 表示向上取整，Math.ceil(11.5) 的结果为 12,
+Math.ceil(-11.5)的结果是-11；
+floor 表示向下取整，所以，Math.floor(11.5)的结果为11,
+Math.floor(-11.5)的结果是-12；round 方法，它表示“四舍五入”。 
 
 9. switch 是否能作用在 byte 上，是否能作用在 long 上，是否能作用在 String 上？ 
 
 答案：
-
 switch 可作用于 char byte short int String 
-
 switch 可作用于 char byte short int 对应的包装类 
-
 switch 不可作用于 long double float boolean，包括他们的包装类
-
 switch 中可以是枚举类型
-
-
 
 10. 用最有效率的方法计算 2 乘以 8？ 
 
 答案： 
-
 2<<
 
