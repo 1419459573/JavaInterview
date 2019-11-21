@@ -8,11 +8,11 @@ Java面试机经，希望可以帮助大家巩固基础。
 
 Git跟公众号同步更新，公众号首发，建议大家前往[公众号](#11)内阅读浏览更加方便，如果觉得总结的不错记得给个Star哦！
 
-公众号
+# 公众号
 
 ![微信公众号](https://raw.githubusercontent.com/1419459573/ImgStorage/master/commonality/%E5%9B%BE%E7%89%871.png)
 
 
-我的微信
+# 我的微信
 
 ![个人微信](https://raw.githubusercontent.com/1419459573/ImgStorage/master/commonality/%E5%9B%BE%E7%89%872.png)
