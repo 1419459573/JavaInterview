@@ -25,7 +25,7 @@ Git跟公众号同步更新，公众号首发，建议大家前往[公众号](#�
 
 # 公众号
 
-![微信公众号](https://raw.githubusercontent.com/1419459573/ImgStorage/master/commonality/%E5%9B%BE%E7%89%871.png?token=AJPK7MVMSJORNSDH25PR5RK52Y4IG)
+![微信公众号](https://raw.githubusercontent.com/1419459573/ImgStorage/master/commonality/%E5%9B%BE%E7%89%871.png?token=AJPK7MREVTUPP2XPT4C5GIC52Y4Q2)
 
 
 # 我的微信
